@@ -14,21 +14,21 @@ any. This code is most likely not STL compliant -- meaning that it is
 unlikely to work with the STL <algorithm> header routines.
 
 You may need to install cmake. To install cmake, execute the command
-"sudo apt-get install cmake".
 
-You may need sudo apt-get install libc6-dbg for proper debugging with valgrind
+-"sudo apt-get install cmake"
 
 This software works on Ubuntu 12.04 & 14.04 and has not been verified on
 other operating systems.
 
    possible cmake options are (will put the executables in build/bin):
-      "mkdir build"
-      "cd build"
-      "cmake -DCMAKE_BUILD_TYPE=Debug ../"
-      "make"
-      "cd ../"
-      Now you have done and out of source build, which leaves the original
-      source directories clean.
+   
+      -"mkdir build"
+      -"cd build"
+      -"cmake -DCMAKE_BUILD_TYPE=Debug ../"
+      -"make"
+      -"cd ../"
       
-      Example calling command:
-         build/bin/cdlList_test
+   Now you have done and out of source build, which leaves the original
+   source directories clean. Example calling command:
+   
+      -"build/bin/cdlList_test"
