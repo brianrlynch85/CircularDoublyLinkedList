@@ -15,29 +15,29 @@
 #include <stdlib.h>
 #include <iterator>
 
-//! \class coplaDlost
+//! \class cdlList
 template< class type >
 class cdlList{
    
    public:
    
-      //! \struct DlistNode
-      struct DlistNode{
+      //! \struct cdlNode
+      struct cdlNode{
          
          public:
             
-            DlistNode(const type &in_data, DlistNode *in_next = NULL,
-                                          DlistNode *in_prev = NULL):
+            cdlNode(const type &in_data, cdlNode *in_next = NULL,
+                                          cdlNode *in_prev = NULL):
                        data(in_data), next(in_next), prev(in_prev){};
                                 
-            DlistNode *next;   //!< points to the next node in the Dlist
-            DlistNode *prev;   //!< point to the previous node in the Dlist
+            cdlNode *next;   //!< points to the next node in the Dlist
+            cdlNode *prev;   //!< point to the previous node in the Dlist
             type data; //!< points to the data contained at the current node
          
       };
    
       int count;       //!< number of elements in the Dlist
-      DlistNode *root; //!< sentinel root node of Dlist
+      cdlNode *root; //!< sentinel root node of Dlist
       friend class iterator;
    
       //! \class iterator
@@ -45,11 +45,11 @@ class cdlList{
                                                 
          public:
          
-            DlistNode* itr_node;
+            cdlNode* itr_node;
          
             friend class cdlList<type>;
          
-            iterator(DlistNode *in_node = NULL){
+            iterator(cdlNode *in_node = NULL){
                itr_node = in_node;
             }
             
@@ -110,13 +110,13 @@ class cdlList{
             }
       
             //Return a reference to the value in the node for updating
-            DlistNode& operator*(){
+            cdlNode& operator*(){
             
                return(*itr_node);
             
             }
       
-            DlistNode* operator->(){
+            cdlNode* operator->(){
             
                return(itr_node);
             
@@ -184,9 +184,9 @@ class cdlList{
  *
  */
 template< class type >
-cdlList<type>::cdlList(){//:root(DlistNode(type())),count(0){
+cdlList<type>::cdlList(){//:root(cdlNode(type())),count(0){
    
-   root = new DlistNode(type());
+   root = new cdlNode(type());
    root->prev = root;
    root->next = root;
    count = 0;
@@ -252,7 +252,7 @@ void cdlList<type>::clear(){
 template< class type >
 void cdlList<type>::insert_before(iterator &itr, type &in_data){
    
-   cdlList::DlistNode* tmp = new DlistNode(in_data,itr.itr_node,
+   cdlList::cdlNode* tmp = new cdlNode(in_data,itr.itr_node,
                                               itr.itr_node->prev);
    
    //Check if only the root node exists
@@ -281,7 +281,7 @@ void cdlList<type>::insert_before(iterator &itr, type &in_data){
 template< class type >
 void cdlList<type>::insert_after(iterator &itr, type &in_data){
    
-   cdlList::DlistNode* tmp = new DlistNode(in_data,itr.itr_node->next,
+   cdlList::cdlNode* tmp = new cdlNode(in_data,itr.itr_node->next,
                                               itr.itr_node);
    
    //Check if only the root node exists
@@ -392,7 +392,7 @@ void cdlList<type>::erase(iterator &itr){
       return;
    }
    
-   DlistNode* tmp = itr.itr_node; //Store the node
+   cdlNode* tmp = itr.itr_node; //Store the node
    itr.itr_node = tmp->prev;      //Move iterator back so its still valid
    
    //Re-route the pointers around the node to be deleted
