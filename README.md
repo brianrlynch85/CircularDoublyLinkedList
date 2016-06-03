@@ -1,5 +1,5 @@
-README for Circular Doubly Linked List
-======================================
+Circular Doubly Linked List
+===========================
 (c) Brian Lynch September, 2015
 -------------------------------
 
@@ -28,3 +28,8 @@ other operating systems.
    source directories clean. Example calling command:
    
       -"build/bin/cdlList_test"
+
+To-Do
+#####
+
+* Work on STL <algorithm> compliance
