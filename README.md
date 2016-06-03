@@ -29,7 +29,8 @@ other operating systems.
    
       -"build/bin/cdlList_test"
 
-To-Do
-#####
+To-Do:
+######
 
 * Work on STL <algorithm> compliance
+* Doxygen documentation
