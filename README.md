@@ -1,11 +1,7 @@
-# ------------------------------------------------------------------------
-#
-#                              README for cdlList
-#                                    V 0.01
-#
-#                        (c) Brian Lynch September, 2015
-#
-# ------------------------------------------------------------------------
+README for Circular Doubly Linked List
+======================================
+(c) Brian Lynch September, 2015
+-------------------------------
 
 This software was written for educational purposes. I wrote/hacked this 
 code while teaching myself how a circular doubly linked list and self implemented
